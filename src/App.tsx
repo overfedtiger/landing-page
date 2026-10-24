@@ -8,6 +8,8 @@ import Products from './components/Products/Products';
 import PicList from './components/PicList/PicList';
 import Testimonial from './components/Testimonial/Testimonial';
 import Banner from './components/Banner/Banner';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
 type Theme = 'light' | 'dark';
 
@@ -40,7 +42,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className='duration-400'>
+    <div className=' pb-14 duration-400'>
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero theme={theme} />
       <About theme={theme} />
@@ -48,6 +50,8 @@ const App = () => {
       <PicList />
       <Testimonial />
       <Banner />
+      <Contact />
+      <Footer />
     </div>
   );
 };

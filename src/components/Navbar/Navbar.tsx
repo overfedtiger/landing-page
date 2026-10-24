@@ -1,6 +1,7 @@
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
 import { BiSolidSun, BiSolidMoon } from 'react-icons/bi';
-
+import ResponsiveMenu from './ResponsiveMenu'
+import { HiMenuAlt1, HiMenuAlt3 } from 'react-icons/hi';
 type Theme = 'light' | 'dark';
 
 type NavbarProps = {
@@ -32,8 +33,12 @@ const NavLinks = [
 ];
 
 const Navbar = ({ theme, setTheme }: NavbarProps) => {
+  const [showMenu, setShowMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
+  const togglemenu = () => {
+    setShowMenu(!showMenu);
+  };
   useEffect(() => {
     const handleScroll = () => {
       setIsVisible(window.scrollY > 20);
@@ -79,8 +84,22 @@ const Navbar = ({ theme, setTheme }: NavbarProps) => {
               )}
             </div>
           </div>
+          {
+            showMenu? (
+              <HiMenuAlt1
+               onClick={togglemenu}
+               size={30}
+               className='cursor-pointer transition-all'/>
+            ):(
+              <HiMenuAlt3
+               onClick={togglemenu}
+               size={30}
+               className='cursor-pointer transition-all'/>
+            )
+          }
         </div>
       </div>
+      <ResponsiveMenu showMenu={showMenu}/>
     </nav>
   );
 };

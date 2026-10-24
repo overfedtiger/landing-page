@@ -37,7 +37,7 @@ const Testimonial = () => {
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum fugit laborum beatae sint libero, quas dolores ipsam quasi? Culpa, aperiam!
               </p>
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 '>
+            <div className='grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 gap-8 '>
               {
                 testimonialData.map((item) => {
                   return (
