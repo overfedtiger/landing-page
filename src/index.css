@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+  .button-outline{
+    @apply rounded-md border-2 border-orange-300 hover:bg-orange-800 hover:text-black duration-500 py-2 py-6 text-orange-300 tracking-wider ;
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
