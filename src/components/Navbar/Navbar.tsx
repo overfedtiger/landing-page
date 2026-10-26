@@ -54,7 +54,7 @@ const Navbar = ({ theme, setTheme }: NavbarProps) => {
               ))}
             </ul>
           </div>
-          <div>
+          <div className='flex items-center gap-3'>
             <div className='hover:text-orange-700'>
               {theme === 'dark' ? (
                 <BiSolidSun onClick={() => setTheme('light')} className='text-2xl' />
@@ -62,8 +62,8 @@ const Navbar = ({ theme, setTheme }: NavbarProps) => {
                 <BiSolidMoon onClick={() => setTheme('dark')} className='text-2xl' />
               )}
             </div>
-          </div>
-          {
+            <div>
+              {
             showMenu? (
               <HiMenuAlt1
                onClick={togglemenu}
@@ -75,10 +75,15 @@ const Navbar = ({ theme, setTheme }: NavbarProps) => {
                size={30}
                className='cursor-pointer transition-all'/>
             )
-          }
+           }
+            </div>
+          </div>
+          
         </div>
       </div>
-      <ResponsiveMenu showMenu={showMenu}/>
+      <ResponsiveMenu 
+      className='md:hidden'
+      showMenu={showMenu}/>
     </nav>
   );
 };
