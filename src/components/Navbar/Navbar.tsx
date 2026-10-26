@@ -1,36 +1,15 @@
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
 import { BiSolidSun, BiSolidMoon } from 'react-icons/bi';
-import ResponsiveMenu from './ResponsiveMenu'
+import ResponsiveMenu from './ResponsiveMenu';
 import { HiMenuAlt1, HiMenuAlt3 } from 'react-icons/hi';
+import { NavLinks } from './navLinks';
+
 type Theme = 'light' | 'dark';
 
 type NavbarProps = {
   theme: Theme;
   setTheme: Dispatch<SetStateAction<Theme>>;
 };
-
-const NavLinks = [
-  {
-    id: 1,
-    name: 'HOME',
-    link: '/#',
-  },
-  {
-    id: 2,
-    name: 'PRODUCTS',
-    link: '/#products',
-  },
-  {
-    id: 3,
-    name: 'ABOUT',
-    link: '/#about',
-  },
-  {
-    id: 4,
-    name: 'BOOKING',
-    link: '/#booking',
-  },
-];
 
 const Navbar = ({ theme, setTheme }: NavbarProps) => {
   const [showMenu, setShowMenu] = useState(false);

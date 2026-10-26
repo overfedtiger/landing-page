@@ -42,7 +42,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className=' pb-14 duration-400'>
+    <div className='min-h-screen w-full px-3 sm:px-5 md:px-8 lg:px-10 pb-14 duration-400'>
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero theme={theme} />
       <About theme={theme} />
